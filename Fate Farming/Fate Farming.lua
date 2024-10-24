@@ -78,7 +78,7 @@ This Plugins are Optional and not needed unless you have it enabled in the setti
 ********************************************************************************
 ]]
 
-player_first_string = string.sub(GetCharacterName(),1,1)
+--player_first_string = string.sub(GetCharacterName(),1,1)
 
 function executeScriptFromURL(url)
     -- Command to fetch the Lua script using curl
@@ -101,22 +101,14 @@ function executeScriptFromURL(url)
     end
 end
 --Pre Fate Settings
-if player_first_string == "S" then
-    yield("/echo Starting Maher configuration profile.")
+yield("/echo Starting "..configuration_profile.." configuration profile.")
 -- URL of the Lua script to fetch and execute
-    local scriptURL = "https://raw.githubusercontent.com/maherzord/pot0to-SND-Scripts/refs/heads/main/Fate%20Farming/Configuration%20Profile/Maher.lua"
+local scriptURL = "https://raw.githubusercontent.com/maherzord/pot0to-SND-Scripts/refs/heads/main/Fate%20Farming/Configuration%20Profile/"..configuration_profile..".lua"
 --local scriptURL = "https://example.com/script.lua"
 -- Execute the Lua script fetched from the URL
-    executeScriptFromURL(scriptURL)        
-elseif player_first_string == "H" then
-    yield("/echo Starting Xu configuration profile.")
--- URL of the Lua script to fetch and execute
-    local scriptURL = "https://raw.githubusercontent.com/maherzord/pot0to-SND-Scripts/refs/heads/main/Fate%20Farming/Configuration%20Profile/Xu.lua"
---local scriptURL = "https://example.com/script.lua"
--- Execute the Lua script fetched from the URL
-    executeScriptFromURL(scriptURL)  
-end
---Change this value for how much echos u want in chat 
+executeScriptFromURL(scriptURL) 
+
+
 --0 no echos
 --1 echo how many bicolor gems you have after every fate
 --2 echo how many bicolor gems you have after every fate and the next fate you're moving to
