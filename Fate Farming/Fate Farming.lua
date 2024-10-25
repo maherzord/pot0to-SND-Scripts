@@ -101,13 +101,16 @@ function executeScriptFromURL(url)
     end
 end
 --Pre Fate Settings
-yield("/echo Starting "..configuration_profile.." configuration profile.")
+if configuration_profile == "" then
+        yield("/echo No configuration profile detected, starting without profile input.")
+else
+        yield("/echo Starting "..configuration_profile.." configuration profile.")
 -- URL of the Lua script to fetch and execute
-local scriptURL = "https://raw.githubusercontent.com/maherzord/pot0to-SND-Scripts/refs/heads/main/Fate%20Farming/Configuration%20Profile/"..configuration_profile..".lua"
+        local scriptURL = "https://raw.githubusercontent.com/maherzord/pot0to-SND-Scripts/refs/heads/main/Fate%20Farming/Configuration%20Profile/"..configuration_profile..".lua"
 --local scriptURL = "https://example.com/script.lua"
 -- Execute the Lua script fetched from the URL
-executeScriptFromURL(scriptURL) 
-
+        executeScriptFromURL(scriptURL) 
+end
 
 --0 no echos
 --1 echo how many bicolor gems you have after every fate
