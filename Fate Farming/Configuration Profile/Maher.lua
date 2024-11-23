@@ -15,7 +15,7 @@ CompletionToJoinBossFate = 0        --If the boss fate has less than this much p
                                         --for the class. Ex: "PLD"
 JoinCollectionsFates = true         --Set to false if you never want to do collections fates
 RSRAoeType = "Full"               --Options: Cleave/Full/Off
-RSRAutoType = "HighHP"               --Options: LowHP/HighHP/Big/Small/HighMaxHP/LowMaxHP/Nearest/Farthest.
+RSRAutoType = "HighHPPercent"               --Options: LowHP/HighHP/Big/Small/HighMaxHP/LowMaxHP/Nearest/Farthest.
                                     
 UseBM = true                        --if you want to use the BossMod dodge/follow mode
     BMorBMR = "BMR"
